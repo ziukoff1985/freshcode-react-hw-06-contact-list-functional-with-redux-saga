@@ -58,8 +58,8 @@ function ContactForm() {
     // ! Новий варіант - з Redux Saga
     const onEditOldContact = () => {
         dispatch(updateContactAction(contactData));
-        dispatch(setContactForEdit(contactData));
-        setContactData(contactData);
+        // dispatch(setContactForEdit(contactData));
+        // setContactData(contactData);
     };
 
     function onSubmitForm(event) {

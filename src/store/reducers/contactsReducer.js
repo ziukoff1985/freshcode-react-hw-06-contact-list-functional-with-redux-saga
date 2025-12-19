@@ -41,6 +41,7 @@ export default function contactsReducer(
                 contacts: state.contacts.map((contact) =>
                     contact.id === payload.id ? payload : contact
                 ),
+                contactForEdit: payload,
                 isFetching: false, // додаємо при роботі з REDUX SAGA
             };
         case ACTION_TYPES.DELETE_CONTACT_SUCCESS: // аналог DELETE_CONTACT
