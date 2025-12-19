@@ -14,7 +14,6 @@ export default function contactsReducer(
     { type, payload }
 ) {
     switch (type) {
-        // * ALL SUCCESS
         case ACTION_TYPES.GET_CONTACTS_SUCCESS:
             return {
                 ...state,
@@ -50,7 +49,6 @@ export default function contactsReducer(
                 isFetching: false,
             };
 
-        // * ALL REQUEST
         case ACTION_TYPES.GET_CONTACTS_REQUEST:
         case ACTION_TYPES.POST_CONTACT_REQUEST:
         case ACTION_TYPES.PUT_CONTACT_REQUEST:
@@ -60,7 +58,6 @@ export default function contactsReducer(
                 isFetching: true,
             };
 
-        // * ALL ERROR
         case ACTION_TYPES.GET_CONTACTS_ERROR:
         case ACTION_TYPES.POST_CONTACT_ERROR:
         case ACTION_TYPES.PUT_CONTACT_ERROR:
