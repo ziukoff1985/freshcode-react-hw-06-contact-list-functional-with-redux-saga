@@ -25,6 +25,7 @@ export default function contactsReducer(
             return {
                 ...state,
                 contacts: [...state.contacts, payload],
+                contactForEdit: { ...initialState.contactForEdit },
                 isFetching: false,
             };
         case ACTION_TYPES.PUT_CONTACT_SUCCESS:

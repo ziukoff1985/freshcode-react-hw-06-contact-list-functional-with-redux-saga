@@ -6,7 +6,6 @@ import {
     updateContactAction,
     deleteContactAction,
 } from '../../store/actions/contactsActions';
-import { EMPTY_CONTACT } from '../../constants/constants';
 
 import styles from './ContactForm.module.css';
 
@@ -23,7 +22,6 @@ function ContactForm() {
 
     const onAddNewContact = () => {
         dispatch(createContactAction(contactData));
-        setContactData(EMPTY_CONTACT);
     };
 
     const onEditOldContact = () => {
