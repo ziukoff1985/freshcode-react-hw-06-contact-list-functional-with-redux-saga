@@ -1,15 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-// import api from '../../api/contactsService';
 import {
-    // createContact,
-    // updateContact,
-    // deleteContact,
     createContactAction,
     updateContactAction,
     deleteContactAction,
-    setContactForEdit,
 } from '../../store/actions/contactsActions';
 import { EMPTY_CONTACT } from '../../constants/constants';
 
@@ -26,40 +21,13 @@ function ContactForm() {
         setContactData(contactForEdit);
     }, [contactForEdit]);
 
-    // * Старий варіант - без Redux Saga
-    // async function onAddNewContact() {
-    //     try {
-    //         const { data } = await api.post('/', contactData);
-    //         dispatch(createContact(data));
-    //         setContactData(EMPTY_CONTACT);
-    //     } catch (error) {
-    //         console.log(error.message);
-    //     }
-    // }
-
-    // ! Новий варіант - з Redux Saga
     const onAddNewContact = () => {
         dispatch(createContactAction(contactData));
         setContactData(EMPTY_CONTACT);
     };
 
-    // * Старий варіант - без Redux Saga
-    // async function onEditOldContact() {
-    //     try {
-    //         const { data } = await api.put(`/${contactData.id}`, contactData);
-    //         dispatch(updateContact(data));
-    //         dispatch(setContactForEdit(data));
-    //         setContactData(data);
-    //     } catch (error) {
-    //         console.log(error.message);
-    //     }
-    // }
-
-    // ! Новий варіант - з Redux Saga
     const onEditOldContact = () => {
         dispatch(updateContactAction(contactData));
-        // dispatch(setContactForEdit(contactData));
-        // setContactData(contactData);
     };
 
     function onSubmitForm(event) {
@@ -71,17 +39,6 @@ function ContactForm() {
         }
     }
 
-    // * Старий варіант - без Redux Saga
-    // async function onContactDelete() {
-    //     try {
-    //         await api.delete(`/${contactData.id}`);
-    //         dispatch(deleteContact(contactData.id));
-    //     } catch (error) {
-    //         console.log(error.message);
-    //     }
-    // }
-
-    // ! Новий варіант - з Redux Saga
     const onContactDelete = () => {
         dispatch(deleteContactAction(contactData.id));
     };

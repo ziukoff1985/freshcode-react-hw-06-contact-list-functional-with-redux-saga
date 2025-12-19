@@ -1,10 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-// import api from '../../api/contactsService';
 import { EMPTY_CONTACT } from '../../constants/constants';
 import {
-    // getContacts,
     getContactsAction,
     setContactForEdit,
 } from '../../store/actions/contactsActions';
@@ -21,20 +19,6 @@ function ContactList() {
         dispatch(setContactForEdit(EMPTY_CONTACT));
     }
 
-    // * useEffect для отримання фільмів з сервера - БЕЗ REDUX SAGA
-    // useEffect(() => {
-    //     async function fetchContacts() {
-    //         try {
-    //             const { data } = await api.get('/');
-    //             dispatch(getContacts(data ?? []));
-    //         } catch (error) {
-    //             console.log(error.message);
-    //         }
-    //     }
-    //     fetchContacts();
-    // }, [dispatch]);
-
-    // ! useEffect для отримання фільмів з сервера - З REDUX SAGA
     useEffect(() => {
         dispatch(getContactsAction());
     }, [dispatch]);

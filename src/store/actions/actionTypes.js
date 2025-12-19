@@ -1,41 +1,28 @@
-// * для REDUX без REDUX SAGA
-// const ACTION_TYPES = {
-//     GET_CONTACTS: 'getContacts',
-//     CREATE_CONTACT: 'createContact',
-//     UPDATE_CONTACT: 'updateContact',
-//     DELETE_CONTACT: 'deleteContact',
-//     SET_CONTACT_FOR_EDIT: 'setContactForEdit',
-// };
-
-// export default ACTION_TYPES;
-
-// ! для REDUX SAGA
 const ACTION_TYPES = {
-    // ? Creating action types - відповідає минулому CREATE_CONTACT
+    // ? Creating
     POST_CONTACT_ACTION: 'POST_CONTACT_ACTION',
     POST_CONTACT_REQUEST: 'POST_CONTACT_REQUEST',
     POST_CONTACT_SUCCESS: 'POST_CONTACT_SUCCESS',
     POST_CONTACT_ERROR: 'POST_CONTACT_ERROR',
 
-    // ? Deleting action types - відповідає минулому DELETE_CONTACT
+    // ? Deleting
     DELETE_CONTACT_ACTION: 'DELETE_CONTACT_ACTION',
     DELETE_CONTACT_REQUEST: 'DELETE_CONTACT_REQUEST',
     DELETE_CONTACT_SUCCESS: 'DELETE_CONTACT_SUCCESS',
     DELETE_CONTACT_ERROR: 'DELETE_CONTACT_ERROR',
 
-    // ? Updating action types - відповідає минулому UPDATE_CONTACT
+    // ? Updating
     PUT_CONTACT_ACTION: 'PUT_CONTACT_ACTION',
     PUT_CONTACT_REQUEST: 'PUT_CONTACT_REQUEST',
     PUT_CONTACT_SUCCESS: 'PUT_CONTACT_SUCCESS',
     PUT_CONTACT_ERROR: 'PUT_CONTACT_ERROR',
 
-    // ? Getting action types - відповідає минулому GET_CONTACTS
+    // ? Getting
     GET_CONTACTS_ACTION: 'GET_CONTACTS_ACTION',
     GET_CONTACTS_REQUEST: 'GET_CONTACTS_REQUEST',
     GET_CONTACTS_SUCCESS: 'GET_CONTACTS_SUCCESS',
     GET_CONTACTS_ERROR: 'GET_CONTACTS_ERROR',
 
-    // * SET_CONTACT_FOR_EDIT - залишається без змін - бо не працює з сервером
     SET_CONTACT_FOR_EDIT: 'SET_CONTACT_FOR_EDIT',
 };
 

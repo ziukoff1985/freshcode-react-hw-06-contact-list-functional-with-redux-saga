@@ -1,8 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-// import api from '../../api/contactsService';
 import {
-    // deleteContact,
     deleteContactAction,
     setContactForEdit,
 } from '../../store/actions/contactsActions';
@@ -14,17 +12,6 @@ function ContactItem({ contact }) {
 
     const contactForEdit = useSelector((state) => state.contactForEdit);
 
-    // * Старий варіант - без Redux Saga
-    // async function onContactDelete() {
-    //     try {
-    //         await api.delete(`/${contact.id}`);
-    //         dispatch(deleteContact(contact.id));
-    //     } catch (error) {
-    //         console.log(error.message);
-    //     }
-    // }
-
-    // ! Новий варіант - з Redux Saga
     const onContactDelete = () => {
         dispatch(deleteContactAction(contact.id));
     };

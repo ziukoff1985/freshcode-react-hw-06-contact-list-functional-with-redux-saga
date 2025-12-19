@@ -1,17 +1,16 @@
 import { createStore } from 'redux';
-import { applyMiddleware } from 'redux'; // метод для додавання middleware
-import { composeWithDevTools } from '@redux-devtools/extension'; // для роботи Redux DevTools
-import logger from 'redux-logger'; // для middleware - logger
+import { applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from '@redux-devtools/extension';
+import logger from 'redux-logger';
 
-import createSagaMiddleware from 'redux-saga'; // ! SAGA
 import rootSaga from '../sagas';
-
 import contactsReducer from './reducers/contactsReducer';
 
-const sagaMiddleware = createSagaMiddleware(); // ! SAGA
+const sagaMiddleware = createSagaMiddleware();
 
-const middleware = applyMiddleware(sagaMiddleware, logger); // ! додавання middleware logger i saga
+const middleware = applyMiddleware(sagaMiddleware, logger);
 
 export default createStore(contactsReducer, composeWithDevTools(middleware));
 
-sagaMiddleware.run(rootSaga); // ! SAGA
+sagaMiddleware.run(rootSaga);

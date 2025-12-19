@@ -1,22 +1,6 @@
 import ACTION_TYPES from './actionTypes';
 
-// const {
-//     GET_CONTACTS,
-//     CREATE_CONTACT,
-//     UPDATE_CONTACT,
-//     DELETE_CONTACT,
-//     SET_CONTACT_FOR_EDIT,
-// } = ACTION_TYPES;
-
-// ? Старий варіант getContacts БЕЗ REDUX SAGA
-// export const getContacts = (contacts) => {
-//     return {
-//         type: GET_CONTACTS,
-//         payload: contacts,
-//     };
-// };
-
-// ! Нові action creators для getContacts - з REDUX SAGA
+// ? Getting
 export const getContactsAction = () => {
     return {
         type: ACTION_TYPES.GET_CONTACTS_ACTION,
@@ -43,15 +27,7 @@ export const getContactsError = (error) => {
     };
 };
 
-// ? Старий варіант createContact БЕЗ REDUX SAGA
-// export const createContact = (contact) => {
-//     return {
-//         type: CREATE_CONTACT,
-//         payload: contact,
-//     };
-// };
-
-// ! Нові action creators для createContact - з REDUX SAGA
+// ? Creating
 export const createContactAction = (contact) => {
     return {
         type: ACTION_TYPES.POST_CONTACT_ACTION,
@@ -79,15 +55,7 @@ export const createContactError = (error) => {
     };
 };
 
-// ? Старий варіант updateContact БЕЗ REDUX SAGA
-// export const updateContact = (contact) => {
-//     return {
-//         type: UPDATE_CONTACT,
-//         payload: contact,
-//     };
-// };
-
-// ! Нові action creators для updateContact - з REDUX SAGA
+// ? Updating
 export const updateContactAction = (contact) => {
     return {
         type: ACTION_TYPES.PUT_CONTACT_ACTION,
@@ -115,15 +83,7 @@ export const updateContactError = (error) => {
     };
 };
 
-// ? Старий варіант deleteContact БЕЗ REDUX SAGA
-// export const deleteContact = (contactId) => {
-//     return {
-//         type: DELETE_CONTACT,
-//         payload: contactId,
-//     };
-// };
-
-// ! Нові action creators для deleteContact - з REDUX SAGA
+// ? Deleting
 export const deleteContactAction = (contactId) => {
     return {
         type: ACTION_TYPES.DELETE_CONTACT_ACTION,
