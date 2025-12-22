@@ -25,7 +25,7 @@ export default function contactsReducer(
             return {
                 ...state,
                 contacts: [...state.contacts, payload],
-                contactForEdit: { ...initialState.contactForEdit },
+                contactForEdit: { ...EMPTY_CONTACT },
                 isFetching: false,
             };
         case ACTION_TYPES.PUT_CONTACT_SUCCESS:
@@ -45,7 +45,7 @@ export default function contactsReducer(
                 ),
                 contactForEdit:
                     state.contactForEdit.id === payload
-                        ? initialState.contactForEdit
+                        ? EMPTY_CONTACT
                         : state.contactForEdit,
                 isFetching: false,
             };
