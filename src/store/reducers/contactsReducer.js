@@ -5,7 +5,7 @@ import ACTION_TYPES from '../actions/actionTypes';
 const initialState = {
     contacts: contactsState,
     contactForEdit: EMPTY_CONTACT,
-    isFetching: false,
+    isPending: false,
     error: null,
 };
 
@@ -19,14 +19,14 @@ export default function contactsReducer(
             return {
                 ...state,
                 contacts: payload,
-                isFetching: false,
+                isPending: false,
             };
         case ACTION_TYPES.POST_CONTACT_SUCCESS:
             return {
                 ...state,
                 contacts: [...state.contacts, payload],
                 contactForEdit: { ...EMPTY_CONTACT },
-                isFetching: false,
+                isPending: false,
             };
         case ACTION_TYPES.PUT_CONTACT_SUCCESS:
             return {
@@ -35,7 +35,7 @@ export default function contactsReducer(
                     contact.id === payload.id ? payload : contact
                 ),
                 contactForEdit: payload,
-                isFetching: false,
+                isPending: false,
             };
         case ACTION_TYPES.DELETE_CONTACT_SUCCESS:
             return {
@@ -47,7 +47,7 @@ export default function contactsReducer(
                     state.contactForEdit.id === payload
                         ? EMPTY_CONTACT
                         : state.contactForEdit,
-                isFetching: false,
+                isPending: false,
             };
 
         // ? Request
@@ -57,7 +57,7 @@ export default function contactsReducer(
         case ACTION_TYPES.DELETE_CONTACT_REQUEST:
             return {
                 ...state,
-                isFetching: true,
+                isPending: true,
             };
 
         // ? Error
@@ -68,7 +68,7 @@ export default function contactsReducer(
             return {
                 ...state,
                 error: payload,
-                isFetching: false,
+                isPending: false,
             };
 
         case ACTION_TYPES.SET_CONTACT_FOR_EDIT:
